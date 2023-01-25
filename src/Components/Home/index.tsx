@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Dados from "../Dados";
 import "./styles.scss";
 

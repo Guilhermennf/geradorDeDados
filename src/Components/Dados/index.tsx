@@ -1,6 +1,6 @@
 import "./styles.scss";
 import { api } from "../../Services/Api/Api";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 
 interface IValues {
     id: number;
