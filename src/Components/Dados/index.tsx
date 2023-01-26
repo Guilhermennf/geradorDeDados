@@ -1,8 +1,9 @@
 import "./styles.scss";
 import { api } from "../../Services/Api/Api";
 import { useCallback, useState } from "react";
+import { IDadosAleatorios } from "../../Interfaces/DadosAleatorios";
 
-interface IValues {
+interface IDados {
     id: number;
     name: {
         first: string;
@@ -21,7 +22,7 @@ interface IValues {
 }
 
 export default function Dates() {
-    const [dados, setDados] = useState<Array<IValues>>([
+    const [dados, setDados] = useState<Array<IDados>>([
         {
             id: 0,
             name: {
@@ -42,7 +43,7 @@ export default function Dates() {
     ]);
 
     const gerarDados = useCallback(async () => {
-        const { data } = await api.get("/api");
+        const { data }: any = await api.get<IDadosAleatorios>("/api");
 
         setDados(data.results);
     }, []);
